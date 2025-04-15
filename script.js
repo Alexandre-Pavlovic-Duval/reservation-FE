@@ -27,7 +27,6 @@ document.querySelector('.btnSearch').addEventListener("click", function() {
 
             if (data.trips[i].departure.toLowerCase() === departure && data.trips[i].arrival.toLowerCase() === arrival && newDateFormated === rawDate){
                 newDateFormated = moment(newDate).format('HH:mm');
-                console.log(data.trips[i]);
                 document.querySelector(".tripContainer").innerHTML += `
                     <div class="trip">
                         <p class="trips">${departure} > ${arrival}</p>
@@ -42,4 +41,8 @@ document.querySelector('.btnSearch').addEventListener("click", function() {
             }
         }
     })
+    document.querySelector('.departure').value = "";
+    document.querySelector('.arrival').value = "";
+    document.querySelector('.dateTrip').value = "";
+
 });
