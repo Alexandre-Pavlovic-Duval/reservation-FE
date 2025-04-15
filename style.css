@@ -39,6 +39,11 @@ body {
   margin-right: 7px;
 }
 
+.firstContentRight, .secondContentRight {
+  text-decoration: none;
+  color:inherit;
+}
+
 .mainDiv {
 height: 93%;
 width: 100%;
