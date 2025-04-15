@@ -160,6 +160,11 @@ background-size: cover;
   border-radius: 3px;
   color: white;
   margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.btnSearch:hover {
+  background-color: #0056b3;
 }
 
 .bottomRightContent {
