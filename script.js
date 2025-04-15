@@ -1,3 +1,4 @@
+// moment.locale('fr'); 
 // Display the trips
 
 // fetch('http://localhost:3000/trips')
@@ -9,28 +10,36 @@
 //     }
 // });
 
-
 document.querySelector('.btnSearch').addEventListener("click", function() {
-    let departure = document.querySelector('.departure').value;
-    let arrival = document.querySelector('.arrival').value;
-    let date =  document.querySelector('.dateTrip').value
+    let departure = document.querySelector('.departure').value.toLowerCase();
+    let arrival = document.querySelector('.arrival').value.toLowerCase();
+    let rawDate =  document.querySelector('.dateTrip').value.toLowerCase();
+    rawDate = moment(rawDate).format('YYYY-MM-DD');
+
     
-    // fetch('http://localhost:3000/trips', {
-	// 	method: 'POST',
-	// 	headers: { 'Content-Type': 'application/json' },
-	// 	body: JSON.stringify({ departure, arrival }),
-    // })
     fetch('http://localhost:3000/trips')
     .then(response => response.json())
     .then(data => {
+
         for (let i = 0; i < data.trips.length; i++){
-            if (data.trips[i].departure === departure && data.trips[i].arrival === arrival ){
-                // console.log(data.trips[i].departure)
-                // console.log(data.trips[i].arrival)
-                console.log(data.trips[i].date)
+            let newDate = data.trips[i].date;
+            let newDateFormated = moment(newDate).format('YYYY-MM-DD');
+
+            if (data.trips[i].departure.toLowerCase() === departure && data.trips[i].arrival.toLowerCase() === arrival && newDateFormated === rawDate){
+                newDateFormated = moment(newDate).format('HH:mm');
+                console.log(data.trips[i]);
+                document.querySelector(".tripContainer").innerHTML += `
+                    <div class="trip">
+                        <p class="trips">${departure} > ${arrival}</p>
+                        <p class="hours">${newDateFormated}</p>
+                        <p class="price">${data.trips[i].price}€</p>
+                        <div class="bookATrip">
+                            <button type="button">Book</button>
+                        </div>
+                    </div>
+                `
+
             }
-            // console.log(i);
-            // console.log(data.trips[i].departure);
         }
     })
 });
