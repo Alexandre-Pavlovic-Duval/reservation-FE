@@ -3,12 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hackathon App</title>
+  <title>Book your tickets!</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
- 
+  <div id="main">
+    <div class="header">
+      <div class="ContentLeftHeader">Tickethack</div>
+      <div class="contentRightHeader">
+        <div class="firstContentRight">Cart</div>
+        <div class="secondContentRight">Bookings</div>
+      </div>
+    </div>
 
+    <div class="mainDiv">
+      <div class="middleContent">
+        <div class="middleTopContent">Explore the world efforlessly by train!</div>
+        <div class="middleBottomContent">Compare, book and enjoy cheap picrs for train tickets: your journey starts on Tickethack.</div>
+      </div>
+
+      <div class="bottomContent">
+        <div class="bottomLeftContent">
+          <div class="mainTopChoose">
+            <div class="direction">
+              <input type="text" name="departure" class="departure" placeholder="Departure"></input>
+              <input type="text" name="departure" class="arrival" placeholder="Arrival"></input>
+            </div>
+            <div class="dateDiv">
+              <input type="date" name="date" class="dateTrip">
+            </div>
+          </div>
+          <div class="search">
+            <button class="btnSearch">Search</button>
+          </div>
+        </div>
+        <div class="bottomRightContent"></div>
+      </div>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>

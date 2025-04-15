@@ -1,0 +1,168 @@
+:root {
+  --mainColorBody : beige;
+  --mainPolice: 14px;
+  --mainFont: arial, Helvetica ,sans-serif;
+  --mainBorder: 3px solid red;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  font-family: var(--mainFont);
+  font-size: var(--mainPolice);
+}
+#main {
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  height: 7%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ContentLeftHeader {
+  font-size: 19px;
+  color: rgb(78,167,145);
+  font-weight: 800;
+  margin-left: 10px;
+}
+
+.contentRightHeader {
+  display: flex;
+  justify-content: space-evenly;
+  width: 130px;
+  margin-right: 7px;
+}
+
+.mainDiv {
+height: 93%;
+width: 100%;
+background-image: url(./images/background.jpg);
+background-size: cover;
+}
+
+.middleContent {
+  height: 15%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.middleTopContent {
+  height: 50%;
+  width: 70%;
+  font-size: 23px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.middleBottomContent {
+  height: 50%;
+  width: 70%;
+  font-size: var(--mainPolice);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottomContent {
+  height: 85%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.mainTopChoose {
+  display: flex;
+  flex-direction: column;
+  gap: 43px;
+  height: 50%;
+}
+
+.bottomLeftContent {
+  background-color: white ;
+  height: 55%;
+  width: 22%;
+  margin-top: 20px;
+  margin-right: 65px;
+  border-radius: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.direction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+.dateDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.departure, .arrival {
+  background-color: #EFF2F1;
+  width: 80%;
+  height: 100%;
+  padding: 2%;
+  border: none;
+  border-radius: 3px;
+}
+
+.departure {
+  margin-bottom: 2px;
+  box-shadow: 0 10px 2px -5px rgba(0, 0, 0, 0.3);
+}
+
+.dateTrip {
+  background-color: #EFF2F1;
+  width: 80%;
+  height: 100%;
+  padding: 2%;
+  border: none;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 50%;
+  margin-bottom: 10px;
+}
+
+.btnSearch {
+  background-color: #4EA791;
+  width: 80%;
+  height: 20%;
+  padding: 2%;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.bottomRightContent {
+  border: var(--mainBorder);
+  background-color: white;
+  height: 55%;
+  width: 22%;
+  margin-top: 20px;
+  margin-left: 65px;
+  border-radius: 3%;
+}
