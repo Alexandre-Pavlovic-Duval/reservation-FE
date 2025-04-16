@@ -15,12 +15,11 @@ fetch("http://localhost:3000/cart")
     let total = 0;
 
     for (let i = 0; i < data.cart.length; i++) {
-      let rawDate = moment(data.cart[i].date).format("HH:mm");
       const trip = data.cart[i];
       container.innerHTML += `
         <div class="trip">
           <p class="trips">${trip.departure} > ${trip.arrival}</p>
-          <p class="hours">${rawDate}</p>
+          <p class="hours">${trip.date}</p>
           <p class="price"><span class="totalprix">${trip.price}</span>€</p>
           <div class="delete">
               <button class="btnButton">X</button>
@@ -59,4 +58,3 @@ fetch("http://localhost:3000/cart")
     updateCart()
   });
 
-  
