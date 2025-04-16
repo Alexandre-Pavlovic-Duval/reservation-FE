@@ -1,20 +1,15 @@
-// moment.locale('fr'); 
-// Display the trips
-
-// fetch('http://localhost:3000/trips')
-// .then(response => response.json())
-// .then(data => {
-//     // console.log(data.trips[0]);
-//     for (let i = 0; i < data.trips.length ; i++){
-//         console.log(data.trips[i])
-//     }
-// });
-
 document.querySelector('.btnSearch').addEventListener("click", function() {
     let departure = document.querySelector('.departure').value.toLowerCase();
     let arrival = document.querySelector('.arrival').value.toLowerCase();
     let rawDate =  document.querySelector('.dateTrip').value.toLowerCase();
     rawDate = moment(rawDate).format('YYYY-MM-DD');
+
+    // TBD
+    if (document.querySelector(".tripContainer") !== null){
+        console.log("test");
+        const dataToDelete = document.querySelector('tripContainer');
+        dataToDelete.innerHTML = '';
+    }  
 
     
     fetch('http://localhost:3000/trips')

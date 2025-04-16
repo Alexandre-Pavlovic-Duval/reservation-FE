@@ -183,6 +183,7 @@ background-size: cover;
   justify-content: center;
   align-items: center;
   height: 70%;
+  /* overflow: scroll; */
 }
 
 .trip {
