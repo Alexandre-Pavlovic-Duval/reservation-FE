@@ -58,5 +58,19 @@ fetch("http://localhost:3000/cart")
     updateCart()
   });
 
+document.querySelector('#achat').addEventListener("click", function () {
 
+  let trips = document.querySelector('.trips').textContent; 
+  let hours = document.querySelector('.hours').textContent; 
+  let price = document.querySelector('.price').textContent;
+
+
+  fetch("http://localhost:3000/cart", {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ trips, hours, price }),
+  })
+
+  console.log("SDDDEZDEZEZD", trips);
+});
   
