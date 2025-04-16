@@ -69,8 +69,6 @@ document.querySelector('#achat').addEventListener("click", function () {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ trips, hours, price }),
-  })
-
-  console.log("SDDDEZDEZEZD", trips);
+  });
 });
   
