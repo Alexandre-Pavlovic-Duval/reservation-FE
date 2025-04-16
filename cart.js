@@ -3,15 +3,18 @@
 fetch('http://localhost:3000/cart')
   .then(response => response.json())
   .then(data => {
+
     const container = document.querySelector("#tripContainer");
-    let total = 0;
+    let total = 0; 
+   
 
     for (let i = 0; i < data.cart.length; i++) {
+      let rawDate = moment(data.cart[i].date).format("HH:mm");
       const trip = data.cart[i];
       container.innerHTML += `
         <div class="trip">
           <p class="trips">${trip.departure} > ${trip.arrival}</p>
-          <p class="hours">${trip.departure}</p>
+          <p class="hours">${rawDate}</p>
           <p class="price"><span class="totalprix">${trip.price}</span>€</p>
           <div class="delete">
               <button class="btnButton">X</button>
@@ -27,6 +30,8 @@ fetch('http://localhost:3000/cart')
 
     for (let i = 0; i < deleteButtons.length; i++) {
       deleteButtons[i].addEventListener("click", function () {
+        fetch('http://localhost:3000/cart/')
+
         this.parentNode.remove();
   
 
