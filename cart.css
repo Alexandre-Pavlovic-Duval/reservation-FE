@@ -78,6 +78,7 @@ body {
   background-color: #00143f;
   border-radius: 0 0 10px 10px;
   padding: 1%;
+  margin-top:10px;
 }
 
 .total {
@@ -88,11 +89,12 @@ body {
 
 #achat {
   background-color: #4ea791;
-  height: 70%;
+  height: 100%;
   width: 10%;
-  border-radius: 10px;
+  border-radius: 5px;
   color: white;
   margin-right: 5%;
+  padding: 10px 0px; 
 }
 
 #emptyCart {
@@ -120,5 +122,6 @@ body {
   color: white;
   border: none;
   border-radius: 5px;
-  width: 150%;
+  padding: 10px 15px;
 }
+
