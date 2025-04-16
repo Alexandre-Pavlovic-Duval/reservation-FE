@@ -54,9 +54,10 @@ document.querySelector(".btnSearch").addEventListener("click", function () {
           fetch('http://localhost:3000/trips', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ trips: { tripsToSend, hoursToSend, priceToSend } }),
+            body: JSON.stringify({ tripsToSend, hoursToSend, priceToSend }),
           })
         }
+        window.location.assign('cart.html');
       });
 
     });
