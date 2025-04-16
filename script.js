@@ -4,13 +4,10 @@ document.querySelector('.btnSearch').addEventListener("click", function() {
     let rawDate =  document.querySelector('.dateTrip').value.toLowerCase();
     rawDate = moment(rawDate).format('YYYY-MM-DD');
 
-    // TBD
     if (document.querySelector(".tripContainer") !== null){
-        console.log("test");
-        const dataToDelete = document.querySelector('tripContainer');
-        dataToDelete.innerHTML = '';
-    }  
-
+    const dataToDelete = document.querySelector('.tripContainer');
+    dataToDelete.innerHTML = '';
+    };
     
     fetch('http://localhost:3000/trips')
     .then(response => response.json())
