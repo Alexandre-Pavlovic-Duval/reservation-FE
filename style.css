@@ -160,14 +160,68 @@ background-size: cover;
   border-radius: 3px;
   color: white;
   margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.btnSearch:hover {
+  background-color: #0056b3;
 }
 
 .bottomRightContent {
-  border: var(--mainBorder);
   background-color: white;
   height: 55%;
   width: 22%;
   margin-top: 20px;
   margin-left: 65px;
   border-radius: 3%;
+  overflow: scroll;
+}
+
+.tripContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+  /* overflow: scroll; */
+}
+
+.trip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5eeee;
+  width: 80%;
+  border-radius: 10px;
+  padding: 0px 20px;
+  margin: 10px;
+}
+
+.trips,
+.hours,
+.price {
+  font-size: 16px;
+  margin: 10px;
+  flex: 1;
+  text-align: center;
+}
+
+.bookATrip {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.bookATrip button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.bookATrip button:hover {
+  background-color: #45a049;
 }
