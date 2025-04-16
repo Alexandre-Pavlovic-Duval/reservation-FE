@@ -70,5 +70,6 @@ document.querySelector('#achat').addEventListener("click", function () {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ trips, hours, price }),
   });
+  window.location.assign('./booking.html')
 });
   
