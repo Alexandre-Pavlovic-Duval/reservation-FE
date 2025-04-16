@@ -174,16 +174,14 @@ background-size: cover;
   margin-top: 20px;
   margin-left: 65px;
   border-radius: 3%;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .tripContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: 70%;
-  /* overflow: scroll; */
+  height: 100%;
 }
 
 .trip {
@@ -224,4 +222,21 @@ background-size: cover;
 
 .bookATrip button:hover {
   background-color: #45a049;
+}
+
+.noTrip{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.image{
+height:50%;
+width: 50%;
+border-bottom: 3px #4EA791 solid;
+padding: 20px;
 }
