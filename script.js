@@ -30,7 +30,7 @@ document.querySelector(".btnSearch").addEventListener("click", function () {
                         <p class="hours">${newDateFormated}</p>
                         <p class="price">${data.trips[i].price}€</p>
                         <div class="bookATrip">
-                            <button type="button">Book</button>
+                            <button type="button" class=bookATrip>Book</button>
                         </div>
                     </div>`;
         }
@@ -43,6 +43,21 @@ document.querySelector(".btnSearch").addEventListener("click", function () {
             <p>It's time to book your future trip</p>
           </div>` 
       }
+
+      document.querySelector(".tripContainer").addEventListener("click", function (event) {
+        if (event.target.classList.contains("bookATrip")) {
+          let tripContainerParent = event.target.closest(".trip");
+          let tripsToSend = tripContainerParent.querySelector(".trips").textContent;
+          let hoursToSend = tripContainerParent.querySelector(".hours").textContent;
+          let priceToSend = tripContainerParent.querySelector(".price").textContent;
+
+          fetch('http://localhost:3000/trips', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ trips: { tripsToSend, hoursToSend, priceToSend } }),
+          })
+        }
+      });
 
     });
   document.querySelector(".departure").value = "";
