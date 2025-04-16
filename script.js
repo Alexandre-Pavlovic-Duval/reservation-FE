@@ -7,7 +7,6 @@ document.querySelector('.btnSearch').addEventListener("click", function() {
     if (document.querySelector(".tripContainer") !== null){
     const dataToDelete = document.querySelector('.tripContainer');
     dataToDelete.innerHTML = '';
-    document.querySelector(".tripContainer").scrollTop = 0;
     };
     
     fetch('http://localhost:3000/trips')

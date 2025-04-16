@@ -181,7 +181,7 @@ background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 70%;
+  height: 100%;
 }
 
 .trip {
@@ -222,4 +222,21 @@ background-size: cover;
 
 .bookATrip button:hover {
   background-color: #45a049;
+}
+
+.noTrip{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.image{
+height:50%;
+width: 50%;
+border-bottom: 3px #4EA791 solid;
+padding: 20px;
 }
