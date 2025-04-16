@@ -1,12 +1,18 @@
+function updateCart () {
+  if(document.querySelector("#tripContainer").children.length === 0){
+    document.querySelector("#container").style.display = "none";
+    document.querySelector("#emptyCart").style.display = "flex";
+  }else{
+    document.querySelector("#container").style.display = "flex";
+    document.querySelector("#emptyCart").style.display = "none";
+  }
+}
 
-
-fetch('http://localhost:3000/cart')
-  .then(response => response.json())
-  .then(data => {
-
+fetch("http://localhost:3000/cart")
+  .then((response) => response.json())
+  .then((data) => {
     const container = document.querySelector("#tripContainer");
-    let total = 0; 
-   
+    let total = 0;
 
     for (let i = 0; i < data.cart.length; i++) {
       let rawDate = moment(data.cart[i].date).format("HH:mm");
@@ -24,22 +30,33 @@ fetch('http://localhost:3000/cart')
     }
 
     document.querySelector(".total").textContent = `Total: ${total}€`;
-
-
     const deleteButtons = document.querySelectorAll(".delete");
-
     for (let i = 0; i < deleteButtons.length; i++) {
       deleteButtons[i].addEventListener("click", function () {
-        fetch('http://localhost:3000/cart/')
-
-        this.parentNode.remove();
-  
-
-     let newTotal = 0;
+            fetch(`http://localhost:3000/cart/${data.cart[i]._id}`, {
+              method: "DELETE",
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                if (data.result) {
+                  this.parentNode.remove();
+                }
+                let newTotal = 0;
+                document.querySelectorAll(".totalprix").forEach((price) => {
+                  newTotal += Number(price.textContent.replace("€", "").trim());
+                });
+                document.querySelector(".total").textContent = `Total: ${newTotal}€`
+                
+              });
+      
+        let newTotal = 0;
         document.querySelectorAll(".totalprix").forEach((price) => {
           newTotal += Number(price.textContent.replace("€", "").trim());
         });
-        document.querySelector(".total").textContent = `Total: ${newTotal}€`
-      })}
-  ;
+        document.querySelector(".total").textContent = `Total: ${newTotal}€`;
+      });
+    }
+    updateCart()
   });
+
+  
